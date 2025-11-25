@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, Info, CheckCircle } from 'lucide-react';
+import Image from 'next/image'; // Importiamo Image
 import { THEME } from '@/constants/theme';
 import { GUIDE_DATA } from '@/data/guideData';
 
@@ -10,20 +11,18 @@ import Sidebar from '@/components/layout/Sidebar';
 import AccordionItem from '@/components/ui/Accordion';
 import VideoPlayerPlaceholder from '@/components/ui/VideoPlayerPlaceholder';
 import SectionHeading from '@/components/ui/SectionHeading';
-import ProfileCard from '@/components/ui/ProfileCard'; // Assicurati che questo import funzioni
+import ProfileCard from '@/components/ui/ProfileCard';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>(GUIDE_DATA[0].id);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>({});
 
-  // Scroll spy effect: Aggiorna la sezione attiva mentre scorri
   useEffect(() => {
     const handleScroll = () => {
-      // Monitoriamo sia le sezioni della guida che la sezione assistenza
       const sectionIds = [...GUIDE_DATA.map(s => s.id), 'assistance'];
       const sections = sectionIds.map(id => document.getElementById(id));
-      const scrollPosition = window.scrollY + 150; // Offset per triggerare prima
+      const scrollPosition = window.scrollY + 150; 
 
       for (const section of sections) {
         if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
@@ -40,12 +39,10 @@ export default function Home() {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 100, // Lascia spazio per l'header
+        top: element.offsetTop - 100, 
         behavior: 'smooth'
       });
       setActiveSection(id);
-    } else {
-      console.warn(`Elemento con id "${id}" non trovato.`);
     }
   };
 
@@ -67,7 +64,17 @@ export default function Home() {
       <div className="flex relative">
         {/* Mobile Header */}
         <div className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
-          <div className="font-bold text-xl" style={{ color: THEME.colors.primary }}>stellaz.</div>
+          {/* LOGO MOBILE AGGIORNATO */}
+          <div className="relative w-32 h-10">
+            <Image 
+              src="/stellaz_logo_vit_1.avif" 
+              alt="Stellaz" 
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
+          
           <button onClick={() => setMobileMenuOpen(true)} className="p-2 text-gray-600">
             <Menu />
           </button>
@@ -120,8 +127,20 @@ export default function Home() {
                   </div>
 
                   {/* Video Area */}
-                  <div className="mb-8 shadow-2xl shadow-pink-100 rounded-xl overflow-hidden">
-                     <VideoPlayerPlaceholder title={section.title} />
+                  <div className={`mb-8 grid gap-6 ${section.videos.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
+                    {section.videos.map((video, idx) => (
+                      <div key={idx} className="shadow-2xl shadow-pink-100 rounded-xl overflow-hidden h-full">
+                        <VideoPlayerPlaceholder 
+                          title={video.title} 
+                          videoUrl={video.url} 
+                        />
+                        {section.videos.length > 1 && (
+                           <div className="p-3 bg-gray-50 border-t border-gray-100 text-center">
+                             <p className="font-semibold text-sm text-gray-700">{video.title}</p>
+                           </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
 
                   {/* Accordion Instructions */}
@@ -172,7 +191,7 @@ export default function Home() {
                 </div>
               ))}
 
-              {/* ASSISTANCE SECTION - QUESTO È IL PEZZO CHE FA FUNZIONARE IL TASTO */}
+              {/* ASSISTANCE SECTION */}
               <div id="assistance" className="scroll-mt-24 pt-12">
                 <ProfileCard />
               </div>

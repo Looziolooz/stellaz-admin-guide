@@ -6,12 +6,12 @@ import Image from 'next/image';
 
 // Palette locale armonizzata per evitare il "nero" e legare i colori
 const CARD_PALETTE = {
-  bg: '#FFF1F2',        // Rosa Cipria molto chiaro (Rose-50)
-  border: '#FECDD3',    // Rosa Pastello per il bordo (Rose-200)
-  title: '#9F1239',     // Deep Rose/Burgundy per il titolo (NON Nero)
+  bg: '#f0f0f0',        // Rosa Cipria molto chiaro (Rose-50)
+  border: '#ffffff',    // Rosa Pastello per il bordo (Rose-200)
+  title: '#ad847f',     // Deep Rose/Burgundy per il titolo (NON Nero)
   text: '#475569',      // Slate Gray morbido per il testo (NON Nero)
-  accent: '#F43F5E',    // Rosa Vivace per il bottone e cerchi (Rose-500)
-  circle: '#FDA4AF',    // Rosa morbido per il cerchio decorativo
+  accent: '#ad847f',    // Rosa Vivace per il bottone e cerchi (Rose-500)
+  circle: '#f0f0f0',    // Rosa morbido per il cerchio decorativo
 };
 
 export default function ProfileCard() {
@@ -70,8 +70,7 @@ export default function ProfileCard() {
         borderColor: CARD_PALETTE.border
       }}
     >
-      {/* Decorative Background Blob (Soft Glow) */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-white rounded-full blur-3xl opacity-60 -mr-20 -mt-20 pointer-events-none"></div>
+
 
       {/* Left Column: Image Area */}
       <div className="shrink-0 relative mt-4 md:mt-0">
@@ -79,8 +78,8 @@ export default function ProfileCard() {
 
         {/* Contenitore Immagine */}
         <div 
-          className="w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden border-4 shadow-lg relative z-10"
-          style={{ borderColor: '#9f1239' }} // Bordo bianco per staccare dal fondo rosa
+          className="w-44 h-44 md:w-48 md:h-48 rounded-full border-4 overflow-hidden shadow-lg mx-auto"
+          style={{ borderColor: '#f1f5f9' }} // Bordo bianco per staccare dal fondo rosa
         >
           <Image 
             src="/profile.png" 
@@ -117,7 +116,7 @@ export default function ProfileCard() {
           <button 
             onClick={handleContactClick}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white shadow-md transition-all duration-200 hover:shadow-lg hover:-translate-y-1 active:scale-95"
-            style={{ backgroundColor: copied ? '#10B981' : '#9f1239' }} // Verde se copiato, altrimenti rosso
+            style={{ backgroundColor: copied ? '#d89977' : '#ad847f' }} // Verde se copiato, altrimenti rosso
           >
             {copied ? <Check size={20} /> : <Mail size={20} />}
             <span>

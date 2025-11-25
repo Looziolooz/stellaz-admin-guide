@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, HelpCircle } from 'lucide-react';
+import Image from 'next/image'; // Importiamo Image
 import { THEME } from '@/constants/theme';
 import { GUIDE_DATA } from '@/data/guideData';
 
@@ -18,9 +19,17 @@ export default function Sidebar({ activeSection, onNavigate, isMobileOpen, close
       <div className="h-full flex flex-col">
         {/* Logo Area */}
         <div className="p-6 border-b border-gray-100 flex justify-between items-center">
-          <div className="text-2xl font-bold tracking-tight" style={{ color: THEME.colors.primary }}>
-            stellaz<span className="text-pink-400">.</span>
+          {/* LOGO AGGIORNATO */}
+          <div className="relative w-40 h-12">
+            <Image 
+              src="/stellaz_logo_vit_1.avif" 
+              alt="Stellaz Logo" 
+              fill
+              className="object-contain object-left"
+              priority
+            />
           </div>
+          
           <button onClick={closeMobile} className="lg:hidden p-1 rounded hover:bg-gray-100">
             <X className="w-6 h-6" />
           </button>
@@ -54,7 +63,7 @@ export default function Sidebar({ activeSection, onNavigate, isMobileOpen, close
             </button>
           ))}
 
-          {/* New Assistance Link */}
+          {/* Assistance Link */}
           <div className="pt-4 mt-4 border-t border-gray-100">
              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">
                 Support

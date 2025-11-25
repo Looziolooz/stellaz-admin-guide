@@ -6,12 +6,17 @@ export interface GuideStep {
   description: string;
 }
 
+export interface GuideVideo {
+  title: string;
+  url: string;
+}
+
 export interface GuideSection {
   id: string;
   title: string;
   icon: React.ElementType;
   shortDesc: string;
-  videoUrl: string; // Placeholder url
+  videos: GuideVideo[];
   steps: GuideStep[];
 }
 
@@ -21,7 +26,9 @@ export const GUIDE_DATA: GuideSection[] = [
     title: 'Subcategory Carousel',
     icon: LayoutGrid,
     shortDesc: 'A scrollable carousel to navigate specific subcollections or categories visually.',
-    videoUrl: '#',
+    videos: [
+      { title: 'Overview & Setup', url: '#' } 
+    ],
     steps: [
       { title: 'Add Section', description: 'In the Theme Editor, click "Add Section" and search for "Subcategory Carousel" (or "Collection List" if customized).' },
       { title: 'Select Collections', description: 'Click on the blocks inside the section to select the specific collections you want to display (e.g., Lips, Eyes, Face).' },
@@ -34,7 +41,10 @@ export const GUIDE_DATA: GuideSection[] = [
     title: 'Complementary Products Block',
     icon: Layers,
     shortDesc: 'Recommend related items directly on your product page to boost discovery and AOV.',
-    videoUrl: '#',
+    // Modificato: Ora c'è un solo video placeholder
+    videos: [
+      { title: 'Setup Guide', url: '/complementary-products-block.mp4' }
+    ],
     steps: [
       { title: 'Open Theme Editor', description: 'In Shopify Admin, go to Online Store > Themes > Find "Ceramide Hyper" and click "Customize".' },
       { title: 'Select Template', description: 'Click the dropdown at the top of the editor, select "Products", then choose a template (e.g., "Default product").' },
@@ -48,13 +58,18 @@ export const GUIDE_DATA: GuideSection[] = [
     id: 'frequently-bought',
     title: 'Frequently Bought Together',
     icon: ShoppingBag,
-    shortDesc: 'Allow customers to add product bundles to the cart.',
-    videoUrl: '#',
+    shortDesc: 'Increase AOV by allowing customers to buy dynamic product bundles with one click.',
+    videos: [
+      { title: 'Setup Guide', url: '/fbt-section.mp4' }
+    ],
     steps: [
-      { title: 'Placement', description: 'Add a new Section called "Frequently Bought Together" below the main description.' },
-      { title: 'Product Selection', description: 'You can set manual products via Metafields or let the algorithm choose based on order history.' },
-      { title: 'Button Style', description: 'Customize the "Add All to Cart" button text and background color to make it stand out (use the accent pink).' },
-      { title: 'Bundle Discount', description: '(Optional) Enable the automatic 10% discount if they buy the entire bundle from the section settings.' }
+      { title: 'Add & Position', description: 'In Theme Editor, go to Product template. Click "Add Section", find "Frequently Bought Together", and drag it to your desired position (e.g., after description).' },
+      { title: 'Quick Setup (Static)', description: 'For a simple setup: Click the section, scroll to "Products", and select 2-10 items manually. Warning: This displays the SAME bundle for every product.' },
+      { title: 'Dynamic Setup: Create Metafield', description: 'Go to Settings > Custom data > Products. Add definition: Name "Bundle Products", Namespace/Key "custom.bundle_products" (CRITICAL), Type "List of products".' },
+      { title: 'Dynamic Setup: Assign Bundles', description: 'In Shopify Admin, edit a specific product. Scroll to bottom Metafields, click "Bundle Products", and select the specific items for that bundle.' },
+      { title: 'Dynamic Setup: Activate', description: 'Back in Theme Editor > Section Settings. Under "Product Source", check the box "Use product metafield". This tells the section to load unique bundles per product.' },
+      { title: 'Customization', description: 'Adjust layout (Width: 1400px), Button style (Pill shape recommended), and enable Toast Notifications for better UX.' },
+      { title: 'Troubleshooting', description: 'If you see the same products everywhere, ensure "Use product metafield" is checked. If empty, check you added 2+ products in the metafield.' }
     ]
   },
   {
@@ -62,7 +77,10 @@ export const GUIDE_DATA: GuideSection[] = [
     title: 'Media Badges Overlay',
     icon: Tag,
     shortDesc: 'Add "Fixed" or "Dynamic" overlay badges (e.g., Best Seller) to product images via Metafields.',
-    videoUrl: '#',
+    // Modificato: Ora c'è un solo video placeholder
+    videos: [
+      { title: 'Setup Guide', url: '/media-badges-overlay.mp4' }
+    ],
     steps: [
       { title: 'Theme Configuration', description: 'Go to Theme Editor > Theme Settings > "Custom Product Media Badge". Toggle "Show custom badges" to ON.' },
       { title: 'Choose Strategy', description: 'Select "Fixed" to use one global image for all enabled products, or "Dynamic" to allow unique badges per product.' },
