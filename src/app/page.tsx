@@ -200,7 +200,7 @@ export default function Home() {
 
             {/* Footer Content */}
             <div className="mt-20 pt-10 border-t border-gray-200 text-center text-gray-500">
-              <p>&copy; 2024 Stellaz E-commerce Manager. Developed by Lorenzo Dastoli.</p>
+              <p>&copy; 2024 Developed by Lorenzo Dastoli.</p>
             </div>
 
           </div>
