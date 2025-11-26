@@ -27,7 +27,10 @@ export const GUIDE_DATA: GuideSection[] = [
     icon: LayoutGrid,
     shortDesc: 'A scrollable carousel to navigate specific subcollections or categories visually.',
     videos: [
-      { title: 'Overview & Setup', url: '#' } 
+      { 
+        title: 'Overview & Setup', 
+        url: 'https://youtu.be/jmhB9F1P6MU' // Link aggiornato
+      } 
     ],
     steps: [
       { title: 'Add Section', description: 'In the Theme Editor, click "Add Section" and search for "Subcategory Carousel" (or "Collection List" if customized).' },
@@ -41,9 +44,11 @@ export const GUIDE_DATA: GuideSection[] = [
     title: 'Complementary Products Block',
     icon: Layers,
     shortDesc: 'Recommend related items directly on your product page to boost discovery and AOV.',
-    // Modificato: Ora c'è un solo video placeholder
     videos: [
-      { title: 'Setup Guide', url: '/complementary-products-block.mp4' }
+      { 
+        title: 'Complete Setup Guide', 
+        url: 'https://youtu.be/ZLp5Aa8dG4c' // Link aggiornato
+      } 
     ],
     steps: [
       { title: 'Open Theme Editor', description: 'In Shopify Admin, go to Online Store > Themes > Find "Ceramide Hyper" and click "Customize".' },
@@ -60,7 +65,10 @@ export const GUIDE_DATA: GuideSection[] = [
     icon: ShoppingBag,
     shortDesc: 'Increase AOV by allowing customers to buy dynamic product bundles with one click.',
     videos: [
-      { title: 'Setup Guide', url: '/fbt-section.mp4' }
+      { 
+        title: 'Setup Guide', 
+        url: 'https://youtu.be/XiLiw6N0cU4' // Link aggiornato
+      }
     ],
     steps: [
       { title: 'Add & Position', description: 'In Theme Editor, go to Product template. Click "Add Section", find "Frequently Bought Together", and drag it to your desired position (e.g., after description).' },
@@ -77,9 +85,11 @@ export const GUIDE_DATA: GuideSection[] = [
     title: 'Media Badges Overlay',
     icon: Tag,
     shortDesc: 'Add "Fixed" or "Dynamic" overlay badges (e.g., Best Seller) to product images via Metafields.',
-    // Modificato: Ora c'è un solo video placeholder
     videos: [
-      { title: 'Setup Guide', url: '/media-badges-overlay.mp4' }
+      { 
+        title: 'Configuration Tutorial', 
+        url: 'https://youtu.be/wdb2PmHbk4o' // Link aggiornato
+      }
     ],
     steps: [
       { title: 'Theme Configuration', description: 'Go to Theme Editor > Theme Settings > "Custom Product Media Badge". Toggle "Show custom badges" to ON.' },

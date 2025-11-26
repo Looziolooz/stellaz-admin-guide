@@ -131,7 +131,7 @@ export default function ProfileCard() {
               href="https://github.com/Looziolooz" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-4 rounded-full bg-white border text-red-900 hover:text-gray-500 transition-all duration-200 hover:-translate-y-1 shadow-sm"
+              className="p-4 rounded-full bg-white border text-[#ad847f] hover:text-gray-500 transition-all duration-200 hover:-translate-y-1 shadow-sm"
               style={{ borderColor: '#ffffff' }}
               aria-label="GitHub Profile"
             >
@@ -141,7 +141,7 @@ export default function ProfileCard() {
               href="https://www.linkedin.com/in/lorenzo-dastoli/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-4 rounded-full bg-white border text-red-900 hover:text-gray-500 transition-all duration-200 hover:-translate-y-1 shadow-sm"
+              className="p-4 rounded-full bg-white border text-[#ad847f] hover:text-gray-500 transition-all duration-200 hover:-translate-y-1 shadow-sm"
               style={{ borderColor: '#ffffff' }}
               aria-label="LinkedIn Profile"
             >
