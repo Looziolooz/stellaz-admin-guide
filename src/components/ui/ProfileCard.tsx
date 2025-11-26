@@ -118,7 +118,7 @@ export default function ProfileCard() {
           >
             {copied ? <Check size={20} /> : <Mail size={20} />}
             <span>
-              {copied ? "Email Copied!" : "Get Support & Custom Solutions"}
+              {copied ? "Email Copied!" : "Get Support"}
             </span>
             {!copied && <Copy size={16} className="opacity-50 group-hover:opacity-100 transition-opacity ml-1" />}
           </button>
