@@ -99,7 +99,7 @@ export default function ProfileCard() {
             className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight"
             style={{ color: CARD_PALETTE.title }}
           >
-            Encountering technical issues or anomalies?
+            Need help or looking to expand?
           </h2>
         </div>
 
@@ -107,9 +107,7 @@ export default function ProfileCard() {
           className="text-lg leading-relaxed max-w-2xl font-medium"
           style={{ color: CARD_PALETTE.text }}
         >
-          Hi, I&apos;m Lorenzo Dastoli, and I&apos;m here to help you. 
-          If you need troubleshooting assistance or want to implement a new custom section for your store, 
-          feel free to reach me out.
+          Hi, I&apos;m Lorenzo Dastoli. I handle the troubleshooting for these components to ensure your site is bug-free. Looking for more? I also provide tailor-made development to take your Shopify store to the next level.
         </p>
         
         <div className="pt-4 flex flex-col sm:flex-row items-center gap-6">
@@ -120,7 +118,7 @@ export default function ProfileCard() {
           >
             {copied ? <Check size={20} /> : <Mail size={20} />}
             <span>
-              {copied ? "Email Copied!" : "Contact Me for Support"}
+              {copied ? "Email Copied!" : "Get Support & Custom Solutions"}
             </span>
             {!copied && <Copy size={16} className="opacity-50 group-hover:opacity-100 transition-opacity ml-1" />}
           </button>
